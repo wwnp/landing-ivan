@@ -9,10 +9,6 @@ const modals = () => {
       i.addEventListener('click', (e) => {
         e.preventDefault()
 
-        // windows.forEach(window => {
-        //   window.style.display = 'none'
-        // })
-
         modal.style.display = 'block'
         document.body.style.overflow = 'hidden'
       })
