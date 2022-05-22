@@ -1,32 +1,32 @@
 const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
   const header = document.querySelector(headerSelector)
   const tabs = document.querySelectorAll(tabSelector)
-  const content = document.querySelectorAll(contentSelector)
+  const contents = document.querySelectorAll(contentSelector)
+  const tabSelectorSliced = tabSelector.slice(1, tabSelector.length)
 
-  function hideTabAndContent() {
-    content.forEach(i => {
-      i.style.display = 'none'
+  function hideContentAndTabs() {
+    tabs.forEach(tab => {
+      tab.classList.remove(activeClass)
     })
-    tabs.forEach(i => {
-      i.classList.remove(activeClass)
+    contents.forEach(content => {
+      content.style.display = 'none'
     })
   }
-  function showTabAndContent(i = 0) {
-    content[i].style.display = 'block'
-    tabs[i].classList.add(activeClass)
+
+  function showContentAndTabs(index = 1) {
+    tabs[index].classList.add(activeClass)
+    contents[index].style.display = 'block'
   }
+  hideContentAndTabs()
+  showContentAndTabs()
 
-  hideTabAndContent()
-  showTabAndContent()
-
-  header.addEventListener('click', (e) => {
-    const target = e.target;
-    if (target &&
-      (target.classList.contains(tabSelector.replace(/\./, "")) || target.parentNode.classList.contains(tabSelector.replace(/\./, "")))) {
-      tabs.forEach((i, index) => {
-        if (target == i || target.parentNode == i) {
-          hideTabAndContent()
-          showTabAndContent(index)
+  header.addEventListener('click', function (e) {
+    const target = e.target
+    if (target.parentNode.classList.contains(tabSelectorSliced)) {
+      hideContentAndTabs()
+      tabs.forEach((tab, index) => {
+        if (tab === target.parentNode) {
+          showContentAndTabs(index)
         }
       })
     }
