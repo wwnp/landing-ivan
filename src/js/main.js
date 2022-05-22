@@ -5,8 +5,10 @@ import tabs from './modules/tabs'
 import forms from './modules/forms';
 import changeModalState from './modules/changeModalState';
 import test from './modules/test';
+import timer from './modules/timer';
 window.addEventListener('DOMContentLoaded', () => {
   let modalState = {}
+  let deadline = '2020-05-23'
 
   modals()
 
@@ -17,6 +19,8 @@ window.addEventListener('DOMContentLoaded', () => {
   forms(modalState)
 
   changeModalState(modalState)
+
+  timer('.container1', deadline)
 
   test('.test_block')
 })
