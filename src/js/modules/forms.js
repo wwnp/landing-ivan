@@ -4,7 +4,6 @@ const forms = (state) => {
   const forms = document.querySelectorAll('form')
   const inputs = document.querySelectorAll('input')
   const modalCalcEnd = document.querySelector('[data-modal-calc-end]')
-  console.log(modalCalcEnd)
   checkNumInputs('input[name="user_phone"]')
 
   const msg = {
