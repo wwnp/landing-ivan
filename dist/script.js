@@ -18977,7 +18977,7 @@ __webpack_require__.r(__webpack_exports__);
 
 window.addEventListener('DOMContentLoaded', function () {
   var modalState = {};
-  var deadline = '2020-05-23';
+  var deadline = '2022-05-23';
   Object(_modules_modals__WEBPACK_IMPORTED_MODULE_1__["default"])();
   Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.glazing_slider', '.glazing_block', '.glazing_content', 'active');
   Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.decoration_slider', '.no_click', '.decoration_content > div > div', 'after_click');
@@ -19451,6 +19451,7 @@ var timer = function timer(id, deadline) {
     var minutes = timer.querySelector('#minutes');
     var seconds = timer.querySelector('#seconds');
     var timeInterval = setInterval(updateClock, 1000);
+    updateClock();
 
     function updateClock() {
       var t = getTimeRemaining(endTime);

@@ -8,7 +8,7 @@ import test from './modules/test';
 import timer from './modules/timer';
 window.addEventListener('DOMContentLoaded', () => {
   let modalState = {}
-  let deadline = '2020-05-23'
+  let deadline = '2022-05-23'
 
   modals()
 
