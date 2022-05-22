@@ -1,10 +1,11 @@
 const modals = () => {
+  const scroll = calcScroll()
   function bindModal(trigger, modalSelector, closeSelector, closeClickOverlay = true) {
     const triggers = document.querySelectorAll(trigger)
     const modal = document.querySelector(modalSelector)
     const close = document.querySelector(closeSelector)
     const windows = document.querySelectorAll('[data-modal]')
-    const scroll = calcScroll()
+
 
     triggers.forEach(i => {
       i.addEventListener('click', (e) => {
@@ -48,6 +49,7 @@ const modals = () => {
     }, ms);
   }
 
+  // Вспомогательный блок чтобы вычислить ширину полосы прокрутки
   function calcScroll() {
     let div = document.createElement('div')
     div.style.width = '50px'
