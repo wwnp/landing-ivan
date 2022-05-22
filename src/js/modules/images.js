@@ -17,7 +17,6 @@ const images = () => {
     document.body.style.overflow = 'hidden'
     let target = e.target
     if (target && target.classList.contains('preview')) {
-      console.log('preview')
       imgPopup.style.display = 'flex'
       const path = target.parentNode.getAttribute('href')
       bigImage.setAttribute('src', path)
