@@ -6,6 +6,7 @@ import forms from './modules/forms';
 import changeModalState from './modules/changeModalState';
 import test from './modules/test';
 import timer from './modules/timer';
+import images from './modules/images';
 window.addEventListener('DOMContentLoaded', () => {
   let modalState = {}
   let deadline = '2022-05-23'
@@ -21,6 +22,8 @@ window.addEventListener('DOMContentLoaded', () => {
   changeModalState(modalState)
 
   timer('.container1', deadline)
+
+  images()
 
   test('.test_block')
 })
